@@ -1,0 +1,7 @@
+#this is an example file of the transforms to be passed to the odom_tf_publisher
+# STATIC_TRANSFORM /base_link /camera_frame_depth tq x y z qx qy qz  
+# STATIC_TRANSFORM /base_link /camera_frame_depth Rt r11 r12 r13 px r21 r22 r23 py r31 r32 r33 pz 
+
+STATIC_TRANSFORM /base_link /camera_link Rt 0 0 1 0   -1 0 0 0   0 -1 0 0.12
+#STATIC_TRANSFORM /base_link /camera_depth_frame Rt 0 0 1 0   -1 0 0 0   0 -1 0 0.12
+STATIC_TRANSFORM /camera_link /camera_depth_frame Rt 0 -1 0 0  0 0 -1 0  1 0 0 0 

@@ -1,0 +1,12 @@
+<launch>
+	<include file="$(find openni_launch)/launch/openni.launch" />
+
+  <node pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" name="depthimage_to_laserscan" args="image:=/camera/depth/image_raw" output="screen">
+  </node>
+
+  <node pkg="srrg_orazio_ros" type="orazio_robot_node" name="orazio_robot_node" output="screen">
+  </node>
+
+  <node pkg="thin_state_publisher" type="thin_state_publisher_node" name="thin_state_publisher_node" args="/home/mastro/ros_packages_src/src/marrtino_2dnav/config/transform.txt" output="screen">
+  </node>
+</launch>

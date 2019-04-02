@@ -1,0 +1,11 @@
+<launch>
+  <!--- Run leg_detector -->
+  <node name="detector" pkg="edge_leg_detector" type="detector"/>
+
+  <!--- Run gscam -->
+  <include file="$(find gscam)/examples/gscam_nodelet2.launch" />
+
+  <include file="$(find face_detection)/launch/face_detection.launch" />
+
+  <node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure"/>
+</launch>
